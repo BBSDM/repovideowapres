@@ -2,8 +2,8 @@
 	// variable status lokal untuk mengetahui apakah dilokal atau di internet jika lokal isi 1 jika internet isi 0
 	$status_lokal	= 0;
 	// alamat_web adalah alamat url domain web
-	$alamat_web		= "http://localhost/BBSDM/videowapres";
-	$path_captcha		= "/BBSDM/videowapres/secureimage";
+	$alamat_web		= "http://localhost/repovideowapres";
+	$path_captcha		= "/repovideowapres/secureimage";
 	
 	// alamat_path adalah alamat url domain web dan folder tempat image diupload
 	$alamat_path	= "http://localhost/BBSDM/wapresri/images/lowdepth/kegiatan/";

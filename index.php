@@ -2,6 +2,7 @@
 	<html>
 		<head>
 			<?php include"library/head.php";?>
+			
 		</head>
 		<body>
 		

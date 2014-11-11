@@ -32,7 +32,7 @@
 		<p><h3><strong>Silahkan Login Terlebih Dahulu</strong></h3></p>               
 
 			<table align="center"cellpadding="0" cellspacing="0" border="0">
-			<form action='<?= $alamat_web; ?>/index/filemanager/' method="post" onsubmit="return validasi_login(this)">
+			<form action='<?= $alamat_web; ?>/confirm.php' method="post" onsubmit="return validasi_login(this)">
 			<tr height="25px">
 			<td width="70px" align="center"><strong>Username</strong></td>
 			<td><input name="username" type="text" size="30%" value="" /></td>
@@ -46,6 +46,7 @@
 			   <div align="right">
 			   <input type="submit" name="Login" value="Login">
 			   <input type="reset" value="Reset" name="Reset">
+			   <input type="hidden" value="1" name="flag">
 			   </div></td>
 			  </tr>
 			<!-- <tr>
