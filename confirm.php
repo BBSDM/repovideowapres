@@ -5,8 +5,8 @@ open_connection();
 
 
 $id_key = $purifier->purify($_POST['username']);
-
-
+// pr($_POST);
+// exit;
 if ($_POST['flag']==1){
 
 	$query 	= "SELECT user_id FROM user WHERE username='$id_key'";

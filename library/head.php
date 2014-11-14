@@ -7,12 +7,15 @@
 <head>
 			<link rel="shortcut icon" type="image/x-icon" href="images/logo_situs.ico" />
 			<link rel="stylesheet" type="text/css" href="css/ddcolortabs.css" />
+			<link href="css/style_slider.css" rel="stylesheet"/>
+			<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 			<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
 			<meta name="keywords" content="Videostube iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 			<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
 			<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 			<script type="text/javascript" src="js/jssor.js"></script>
 			<script type="text/javascript" src="js/jssor.slider.js"></script>
+			<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	
 			
 <?php if ($librari_data_tables=="aktif"){?>

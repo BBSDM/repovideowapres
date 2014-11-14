@@ -5,24 +5,33 @@
 	</head>
 	<body>
 	<!----start-wrap---->
-	<div class="wrap">
-		<!----start-Header---->
-		<div class="header">
+		<div class="wrap">
+		<nav class="navbar navbar-default" role="navigation">
+			<!----start-Header---->
+			<div class="header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" 
+			aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
 			<!----start-Logo---->
 			<div class="logo">
-				<?php include "library/logo.php";?>
+					<?php include "library/logo.php";?>
 			</div>
-			<!----End-Logo---->
-			<!----start-top-nav---->
-			<div class="top-nav">
-				<ul>
+				<!----End-Logo---->
+				<!----start-top-nav---->
+				
+				<div id ="navbar" class="collapse navbar-collapse">
 					<?php include "library/menu.php";?>
-				</ul>
+				</div>
+			
+				<div class="clear"> </div>
+				<!----End-top-nav---->
 			</div>
-			<div class="clear"> </div>
-			<!----End-top-nav---->
-		</div>
-		<!----End-Header---->
+			<!----End-Header---->
+		</nav>	
 		<div class="clear"> </div>
 		<div class="content">
 			<div class="section group">				
@@ -45,10 +54,11 @@
 			  </div>
 		</div>
 	
-			<div class="clear"> </div>
-			<div class="copy-right">
-			<?php include "library/footer.php";?>
-		</div>
+			<footer class="footer navbar-fixed-bottom" style="position:relative;">
+					<div class="container">
+					<p class="text-muted"><?php include "library/footer.php";?></p>
+					</div>
+			</footer>
 	</div>
 	<!----End-wrap---->
 	</body>

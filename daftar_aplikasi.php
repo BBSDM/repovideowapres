@@ -10,26 +10,34 @@
 <body>
 		
 		
-		
-			<!----start-wrap---->
+		<!----start-wrap---->
 		<div class="wrap">
+		<nav class="navbar navbar-default" role="navigation">
 			<!----start-Header---->
 			<div class="header">
-				<!----start-Logo---->
-				<div class="logo">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" 
+			aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<!----start-Logo---->
+			<div class="logo">
 					<?php include "library/logo.php";?>
-				</div>
+			</div>
 				<!----End-Logo---->
 				<!----start-top-nav---->
-				<div class="top-nav">
+				
+				<div id ="navbar" class="collapse navbar-collapse">
 					<?php include "library/menulogin.php";?>
 				</div>
+			
 				<div class="clear"> </div>
 				<!----End-top-nav---->
 			</div>
 			<!----End-Header---->
-
-		<div class="clear"> </div>
+		</nav>	
 
 <div class="content">			
 			

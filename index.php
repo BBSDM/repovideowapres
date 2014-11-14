@@ -5,32 +5,40 @@
 			
 		</head>
 		<body>
-		
-		
-		
-	 
-	
-		
+			
 		<!----start-wrap---->
 		<div class="wrap">
+		<nav class="navbar navbar-default" role="navigation">
 			<!----start-Header---->
 			<div class="header">
-				<!----start-Logo---->
-				<div class="logo">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" 
+			aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<!----start-Logo---->
+			<div class="logo">
 					<?php include "library/logo.php";?>
-				</div>
+			</div>
 				<!----End-Logo---->
 				<!----start-top-nav---->
-				<div class="top-nav">
+				
+				<div id ="navbar" class="collapse navbar-collapse">
 					<?php include "library/menu.php";?>
 				</div>
+			
 				<div class="clear"> </div>
 				<!----End-top-nav---->
 			</div>
 			<!----End-Header---->
+		</nav>	
 			
 			<div class="clear"> </div>
+			<div class="row">
 			<div class="content">
+			<div class="col-md-9">
 				<div class="left-content">
 					<div class="searchbar">
 						<div class="search-left">
@@ -38,14 +46,14 @@
 						</div>
 						<div class="clear"> </div>
 					</div>
-					<div class="box">
-					<div class="grid">
-				<div class="gridjs">
+					
+					
 					
 						
 			 <!-- Jssor Slider Begin -->
     <!-- You can move inline styles to css file or css block. -->
-    <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 810px; height: 300px; background: #000; overflow: hidden; ">
+	<div style="margin:0px 40px 0px 40px">
+    <div id="slider1_container" style="position: relative;margin:10px 0px 10px 5px;top: 0px; left: 0px; width: 815px; height: 320px; background: #000; overflow: hidden; ">
 
         <!-- Loading Screen -->
         <div u="loading" style="position: absolute; top: 0px; left: 0px;">
@@ -56,7 +64,6 @@
                 top: 0px; left: 0px;width: 100%;height:100%;">
             </div>
         </div>
-
         <!-- Slides Container -->
         <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px;
             overflow: hidden;">
@@ -113,15 +120,14 @@
         <!-- ThumbnailNavigator Skin End -->
         <a style="display: none" href="http://www.jssor.com">javascript</a>
     </div>
+	</div>
     <!-- Jssor Slider End -->
 			
-				</div>
-			</div>
-			</div>
 		</div>
+		</div> <!-- end col-md-8 for left content -->
 		
 			<!-- right content tag-->
-			
+		<div class="col-md-3">	
 		<div class="right-content">
 				<div class="popular">
 					<h3>Tags</h3>
@@ -140,88 +146,111 @@
 							</div>
 						</div>
 		</div>
+		</div> <!-- end col-md-4 for right content-->
 	</div> <!-- end content -->
-	
+	</div> <!-- end row -->
 	
 	
 			
 			
 			<div class="clear"> </div>
+			<div class="row"> 
 			<div class="content">
-			
+				<div class="col-md-12">
 					<div class="searchbar">
 						<div class="search-left">
 							<p>Daftar Video yang Terakhir DiUpload</p>
 						</div>
 						<div class="clear"> </div>
 					</div>
-					<div class="box">
-					<div class="grids">
-						<div class="grid">
-							<h3>Consectetur adipisicing elit</h3>
-							<a href="single.php"><img src="images/g1 copy.png" title="video-name" /></a>
-							<div class="time">
-								<span>00:10</span>
+						<div class="row">
+						 <div id="slider_container" style="position: relative; margin:10px 0 10px 0;top: 0px; overflow: hidden; ">
+							<div class="col-md-3">
+								<h3>Consectetur adipisicing elit</h3>
+								<a href="single.php"><img src="images/g1 copy.png" title="video-name" /></a>
+								<div class="time">
+									<span>00:10</span>
+								</div>
+								<div class="grid-info">										
+									<div class="clear"> </div>
+									<div class="video-watch">
+										<img src="images/views.png" title="Views" />100
+									</div>				
+									<div class="lables">
+										<p>Tag :<a href="categories.html">Lorem</a></p>
+									</div>
+								</div>
 							</div>
-							<div class="grid-info">										
-								<div class="clear"> </div>
-								<div class="video-watch">
-									<img src="images/views.png" title="Views" />100
-								</div>				
-								<div class="lables">
-									<p>Tag :<a href="categories.html">Lorem</a></p>
+							<div class="col-md-3">
+								<h3>Consectetur adipisicing elit</h3>
+								<a href="single.php"><img src="images/g2 copy.png" title="video-name" /></a>
+								<div class="time">
+									<span>2:10</span>
+								</div>
+								<div class="grid-info">										
+									<div class="clear"> </div>
+									<div class="video-watch">
+										<img src="images/views.png" title="Views" />90
+									</div>				
+									<div class="lables">
+										<p>Tag :<a href="categories.html">Lorem</a></p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<h3>Consectetur adipisicing elit</h3>
+								<a href="single.php"><img src="images/g4.jpg" title="video-name" /></a>
+								<div class="time">
+									<span>10:10</span>
+								</div>
+								<div class="grid-info">										
+									<div class="clear"> </div>
+									<div class="video-watch">
+										<img src="images/views.png" title="Views" />100
+									</div>				
+									<div class="lables">
+										<p>Tag :<a href="categories.html">Lorem</a></p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<h3>Consectetur adipisicing elit</h3>
+								<a href="single.php"><img src="images/g4.jpg" title="video-name" /></a>
+								<div class="time">
+									<span>10:10</span>
+								</div>
+								<div class="grid-info">										
+									<div class="clear"> </div>
+									<div class="video-watch">
+										<img src="images/views.png" title="Views" />100
+									</div>				
+									<div class="lables">
+										<p>Tag :<a href="categories.html">Lorem</a></p>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="grid">
-							<h3>Consectetur adipisicing elit</h3>
-							<a href="single.php"><img src="images/g2 copy.png" title="video-name" /></a>
-							<div class="time">
-								<span>2:10</span>
-							</div>
-							<div class="grid-info">										
-								<div class="clear"> </div>
-								<div class="video-watch">
-									<img src="images/views.png" title="Views" />90
-								</div>				
-								<div class="lables">
-									<p>Tag :<a href="categories.html">Lorem</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="grid">
-							<h3>Consectetur adipisicing elit</h3>
-							<a href="single.php"><img src="images/g4.jpg" title="video-name" /></a>
-							<div class="time">
-								<span>10:10</span>
-							</div>
-							<div class="grid-info">										
-								<div class="clear"> </div>
-								<div class="video-watch">
-									<img src="images/views.png" title="Views" />100
-								</div>				
-								<div class="lables">
-									<p>Tag :<a href="categories.html">Lorem</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					</div>
+					</div> <!-- end row-->
 					<div class="clear"> </div>
 			
 			 
-			
-			</div> <!-- end content -->
+			 </div> <!-- end col-md-12 -->
+			</div> 
+			</div><!-- end content -->
+		
 			<div class="clear"> </div>
 			
 				<div class="clear"> </div>
 				
-				<div class="copy-right">
-					<?php include "library/footer.php";?>
-		
-				</div>
+				 <footer class="footer navbar-fixed-bottom" style="position:relative;">
+					<div class="container">
+					<p class="text-muted"><?php include "library/footer.php";?></p>
+					</div>
+				</footer>
+
 		</div>
+		</div> <!-- end row -->
+		
 		
 		<!----End-wrap---->
 		
