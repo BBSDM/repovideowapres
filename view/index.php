@@ -167,7 +167,7 @@
 						 <div id="slider_container" style="position: relative; margin:10px 0 10px 0;top: 0px; overflow: hidden; ">
 							<div class="col-md-3">
 								<h3>Consectetur adipisicing elit</h3>
-								<a href="<?=$url_rewrite?>single.php"><img src="<?=$url_rewrite?>images/g1 copy.png" title="video-name" /></a>
+								<a href="<?=$url_rewrite?>content2/single"><img src="<?=$url_rewrite?>images/g1 copy.png" title="video-name" /></a>
 								<div class="time">
 									<span>00:10</span>
 								</div>
@@ -183,7 +183,7 @@
 							</div>
 							<div class="col-md-3">
 								<h3>Consectetur adipisicing elit</h3>
-								<a href="<?=$url_rewrite?>single.php"><img src="<?=$url_rewrite?>images/g2 copy.png" title="video-name" /></a>
+								<a href="<?=$url_rewrite?>content2/single"><img src="<?=$url_rewrite?>images/g2 copy.png" title="video-name" /></a>
 								<div class="time">
 									<span>2:10</span>
 								</div>
@@ -199,7 +199,7 @@
 							</div>
 							<div class="col-md-3">
 								<h3>Consectetur adipisicing elit</h3>
-								<a href="<?=$url_rewrite?>single.php"><img src="<?=$url_rewrite?>images/g4.jpg" title="video-name" /></a>
+								<a href="<?=$url_rewrite?>content2/single"><img src="<?=$url_rewrite?>images/g4.jpg" title="video-name" /></a>
 								<div class="time">
 									<span>10:10</span>
 								</div>
@@ -215,7 +215,7 @@
 							</div>
 							<div class="col-md-3">
 								<h3>Consectetur adipisicing elit</h3>
-								<a href="<?=$url_rewrite?>single.php"><img src="<?=$url_rewrite?>images/g4.jpg" title="video-name" /></a>
+								<a href="<?=$url_rewrite?>content2/single"><img src="<?=$url_rewrite?>images/g4.jpg" title="video-name" /></a>
 								<div class="time">
 									<span>10:10</span>
 								</div>

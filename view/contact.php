@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-			<?php include"../library/head.php";?>
-	</head>
+	
+			<?php include"view/head.php";?>
+	
 	<body>
 	<!----start-wrap---->
 		<div class="wrap">
@@ -18,13 +18,13 @@
 			</button>
 			<!----start-Logo---->
 			<div class="logo">
-					<?php include "../library/logo.php";?>
+					<?php include "view/logo.php";?>
 			</div>
 				<!----End-Logo---->
 				<!----start-top-nav---->
 				
 				<div id ="navbar" class="collapse navbar-collapse">
-					<?php include "../library/menu.php";?>
+					<?php include "view/menu.php";?>
 				</div>
 			
 				<div class="clear"> </div>
@@ -56,7 +56,7 @@
 	
 			<footer class="footer navbar-fixed-bottom" style="position:relative;">
 					<div class="container">
-					<p class="text-muted"><?php include "../library/footer.php";?></p>
+					<p class="text-muted"><?php include "view/footer.php";?></p>
 					</div>
 			</footer>
 	</div>

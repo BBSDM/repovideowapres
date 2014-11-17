@@ -29,7 +29,8 @@
 $temp=explode("/", $cek);
 $file=  end($temp);
 $filename=$data[1];
-if($filename=="home"){
+
+if($filename=="home" || $filename==""){
 
 ?>
 <script>

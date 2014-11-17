@@ -28,11 +28,11 @@ $mode = "cfb";
 $secretkey = "menpora1234";
 $TITLE="Video Station Wapresri";
 $alamat_ip = "http://10.10.100.241:8081/administrator/user/";
-$url_rewrite = "http://localhost/repo_mvc/";
-$url_img = "http://localhost/repo_mvc/";
-$REQUEST="repo_mvc/content";
+$url_rewrite = "http://localhost/repovideowapres/";
+$url_img = "http://localhost/repovideowapres/";
+$REQUEST="repovideowapres/content";
 $domain = "localhost";
-$path="C:\\xampp\\htdocs\\repo_mvc";
+$path="C:\\xampp\\htdocs\\repovideowapres";
 
 $path_upload="../wapresri";
 $path_upload_ktp="ktp";
@@ -40,13 +40,13 @@ $path_upload_album="../wapresri";
 
 $path_video		= "../wapresri/video";
 $path_tumbnail	= "../wapresri/tumbnail";
-$path_captcha		= "/repo_mvc/secureimage";
+$path_captcha		= "/repovideowapres/secureimage";
 class config {
      public $db_host 	= "localhost";
      public $db_user 	= "root";
-     public $db_pass 	= "wisuda21";
+     public $db_pass 	= "";
      public $database 	= "cms_wapres_video";
-     public $url_rewrite_class 		= "http://localhost/repo_mvc";
+     public $url_rewrite_class 		= "http://localhost/repovideowapres";
      public $session_expired_time 	= ""; //in second
      public $hashing_number			= "d4t4b4s3_m3np0r41235";
      public $debug 					= 1;

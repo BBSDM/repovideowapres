@@ -22,22 +22,22 @@ if (count($data) == 0)                       // No path elements means home
 else
 //untuk main menu
      switch ($data[1]) {             // Pop off first item and switch
-          case 'daftar':
+          case "daftar":
 		       include "view/daftar.php";
 			  
           break;
 			   
           case "login":
-                include "/view/login.php";
+                include "view/login.php";
           break;
 		  
-          case "log_video":
-                include "./view/log_video.php";
-          break;	
-
-          case "pendaftaran":
-				include "./view/pendaftaran.php";
-          break;			  
+		   case "single":
+				include "view/single.php";
+		  break;     
+		  
+		  case "contact":
+				include "view/contact.php";
+		  break;     			  
 
           case "application":
                if ($data[2] == "tambah") {
