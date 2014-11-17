@@ -1,0 +1,1 @@
+<a href="<?=$url_rewrite?>index.html"><img src="<?=$url_rewrite?>images/logo.png" title="logo" /></a>

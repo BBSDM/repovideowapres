@@ -1,11 +1,11 @@
-<?php
-session_start();
-require 'database.php';
-open_connection();
-//simpan di log login
-$ip			= $_SERVER['REMOTE_ADDR'];
-$waktu		= gmdate('Y-m-d h:i:s');
-mysql_query("INSERT INTO log_login (user_id,ip,waktu,keterangan) VALUES ('$_SESSION[user_id]','$ip','$waktu','logout')");
-session_destroy();
-echo("<script language=\"javascript\">window.location.href=\"index.php\";</script>");
+<?php 
+	include 'config/config.php';
+	include 'config/application.php';
+	$data_log		 		= array("user_id" => $_SESSION['user_id']);					
+	$LOG->insertLogLogout($data_log);
+	session_destroy();
+    setcookie ($cookie_name, '', time() - $cookie_time);
+    $status=setcookie($cookie_name, '', time() - $cookie_time,"/","$domain");
+    echo("<script language=\"javascript\">window.location.href=\"$url_rewrite\";</script>");
+          
 ?>

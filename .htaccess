@@ -1,0 +1,12 @@
+RewriteEngine on
+Rewriterule ^beranda/?                            \/repo_mvc/index.php
+Rewriterule ^content2/?                            \/repo_mvc/tanpa_login.php
+	
+ Rewriterule ^content/?                            \/repo_mvc/isi.php
+ Rewriterule ^proses/?                            \/repo_mvc/aksi.php
+
+ #Rewriterule ^api/?                            \/repo_mvc/api.php
+
+
+ Rewriterule ^login/?                            \/repo_mvc/core/login_proses.php
+ Rewriterule ^quit/?                            \/repo_mvc/logout.php
