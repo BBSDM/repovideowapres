@@ -17,7 +17,7 @@ $id=$_SESSION['user_id'];//Nanti diganti
 /* Array of database columns which should be read and sent back to DataTables. Use a space where
  * you want to insert a non-database field (for example a counter or static image)
  */
-$aColumns = array('id_log','ip', 'user_id','waktu','nama_file','keterangan');
+$aColumns = array('id_log','ip', 'user_id','judul','waktu','nama_file','keterangan');
 
 /* Indexed column (used for fast and accurate table cardinality) */
 $sIndexColumn = "id_log";
@@ -169,6 +169,7 @@ while ($aRow = mysql_fetch_array($rResult)) {
 		$row 		= array();     
 		$ip			= $aRow['ip'];
 		$user_id	= $aRow['user_id'];
+		$judul		= $aRow['judul'];
 		$nama_file	= $aRow['nama_file'];
 		//username dan nama
 		$qry_user	= mysql_query("select username from user where user_id='$user_id'") or die(mysql_error());
@@ -182,6 +183,7 @@ while ($aRow = mysql_fetch_array($rResult)) {
 		$row[]  	= $ip;
         $row[] 		= $username;
         $row[]  	= $waktu;
+        $row[]  	= $judul;
         $row[]  	= $nama_file;
         $row[]  	= $keterangan;
 

@@ -27,6 +27,7 @@ $algoritma = "rijndael-256";
 $mode = "cfb";
 $secretkey = "menpora1234";
 $TITLE="Video Station Wapresri";
+$STATUS_API = 0;
 $alamat_ip = "http://10.10.100.241:8081/administrator/user/";
 $url_rewrite = "http://localhost/repovideowapres/";
 $url_img = "http://localhost/repovideowapres/";
@@ -38,8 +39,10 @@ $path_upload="../wapresri";
 $path_upload_ktp="ktp";
 $path_upload_album="../wapresri";
 
-$path_video		= "../wapresri/video";
-$path_tumbnail	= "../wapresri/tumbnail";
+$path_video		= "../../wapresri/video";
+$path_tumbnail	= "../../wapresri/video";
+
+$path_video_awal= "../wapresri/video";
 $path_captcha		= "/repovideowapres/secureimage";
 class config {
      public $db_host 	= "localhost";

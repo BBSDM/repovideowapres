@@ -1,50 +1,68 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+	<html>
+		<head>
+			<?php 
+				$librari_data_tables="aktif";
+				include"view/head.php";
+			?>
+		</head>
 
-<head>
+		<body>
+		
+		<!----start-wrap---->
+		<div class="wrap">
+		<nav class="navbar navbar-default" role="navigation">
+			<!----start-Header---->
+			<div class="header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" 
+			aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<!----start-Logo---->
+			<div class="logo">
+					<?php include "view/logo.php";?>
+			</div>
+				<!----End-Logo---->
+				<!----start-top-nav---->
+				
+				<div id ="navbar" class="collapse navbar-collapse">
+					<?php include "view/menu.php";?>
+				</div>
+			
+				<div class="clear"> </div>
+				<!----End-top-nav---->
+			</div>
+			<!----End-Header---->
+		</nav>	
 
-   <?php
-   include "view/head.php";
-   ?>
-
-</head>
-
-<body>
-
-    <div id="wrapper">
-
-        <?php
-        include "view/default/right_menu.php";
-        ?>
-
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Log Login</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
+		<div id="content">
+			<div class="section group">							
+				<div class="col span_1_of_all">
+					<h3>Management Log</h3>
                     <div class="panel panel-default">
-                          <div class="panel-info">
+                        <div class="panel-info">
                              <ul class="breadcrumb">
-                                  <li class="active" >Log Login</li>                                  
+                                  <li><a href="<?=$url_rewrite ?>content/log_video" >Daftar Log Video</a></li>
+                                  <li  class="active" >Daftar Log Login</li>
                              </ul>
-                        </div>
+                        </div>						
                         <!-- /.panel-heading -->
                         <div class="panel-body">
+                              
+                              <br/>
                               <br/>
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-login">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-setting">
                                     <thead>
                                         <tr>
-                                            <th>Alamat Ip</th>
-                                            <th>Username</th>
-                                            <th>Nama</th>
-                                            <th width='25%'>Waktu</th>
-                                            <th>Keterangan</th>
+											<th width='10'>Alamat IP</th>
+											<th width='50'>Username</th>
+											<th width='20'>Nama</th>
+											<th width='30'>Waktu</th>
+											<th width='5'>Keterangan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -55,50 +73,39 @@
                                 </table>
                             </div>
                             <!-- /.table-responsive -->
-                            
                         </div>
                         <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-login').dataTable(
-                {
-                    "aoColumnDefs": [
-                         { "aTargets": [2] }
-                    ],
-                    "aoColumns":[
-                         {"bSortable": true},
-                         {"bSortable": true},
-                         {"bSortable": true},
-                         {"bSortable": true},
-                         {"bSortable": true}],
-   
-                    "bProcessing": true,
-                    "bServerSide": true,
-					"sPaginationType": "full_numbers",
-                    "sAjaxSource": "<?=$url_rewrite?>api/api_log_login.php"
-               }
-                  
-                  );
-    });
-    </script>
-    
-    
-        </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    
-
-    
-
-</body>
-
-</html>
+					</div>
+				</div>
+              </div>
+			</div>
+			 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+			<script>
+			$(document).ready(function() {
+				$('#dataTables-setting').dataTable(
+						{
+							"aoColumnDefs": [
+								 { "aTargets": [2] }
+							],
+							"aoColumns":[
+								 {"bSortable": true},
+								 {"bSortable": true},
+								 {"bSortable": true},
+								 {"bSortable": true},
+								 {"bSortable": true}],
+		   
+							"bProcessing": true,
+							"bServerSide": true,
+							"sAjaxSource": "<?=$url_rewrite?>api/api_log_login.php"
+					   }
+						  
+						  );
+			});
+			</script>
+			<div class="clear"> </div>
+			<div class="copy-right">
+				<?php include "view/footer.php";?>			
+			</div>		
+		</div> <!-- end wrap --> 	
+	</body>
+</html>	

@@ -1,15 +1,7 @@
 <?php
-	require_once __DIR__ .'/../config/config.php';
-	require_once __DIR__ .'/../utility/database/mysql_db.php';
-	require_once __DIR__ .'/../utility/utilityCode.php';
-
-	//Untuk Model 
-	require_once __DIR__ . '/../model/modelPengguna.php';
-	$PENGGUNA=new modelPengguna();
-	//Akhir Model	
-	
-	$user_id	
-	$qWhere = array("user_id" => $user_id);
+	require_once __DIR__ .'/../config/application.php';
+		
+	$qWhere = array("id_key" => $id_key);
     $data 	= $PENGGUNA->readPengguna($qWhere);
 	//Hitung jmlh data
     if($data!="")
@@ -17,17 +9,23 @@
 	else
 		$jData=0;
     if ($jData > 0) {
-		$username 	= $data->username;
+		$user_now 	= $data->username;
 		$cek_eksist	=1;
     } else {
 		$cek_eksist=0;
-	}
-	if($status_edit==1){  
-		if($cek_eksist==0){                          
-			$UTILITY->popup_message("Id Konfirmasi tidak dikenal!");
-            $UTILITY->location_goto("index.php");
-        }else{
-			$PENGGUNA->confirmApi($username);
-		}
-	}
+	}  
+	if($cek_eksist==0){
+		$UTILITY->popup_message("Id Konfirmasi Tidak Dikenal!");
+        $UTILITY->location_goto("content/home");
+	}else{
+		if ($STATUS_API==0){		
+			$PENGGUNA->confirmPengguna($user_now);
+			$UTILITY->popup_message("Username berhasil dikonfirmasi silahkan Login!");
+			$UTILITY->location_goto("content/login");
+		}else{
+			$PENGGUNA->confirmApi($user_now);			
+			$UTILITY->popup_message("Username berhasil dikonfirmasi silahkan Login!");
+			$UTILITY->location_goto("content/login");			
+		}		
+	}		
 ?>

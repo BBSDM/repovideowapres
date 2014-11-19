@@ -29,7 +29,7 @@ class modelPengguna extends mysql_db {
         $confirm		= $data['confirm'];          
         $id_key			= $data['id_key'];          
         $waktu			= $data['waktu']; 		
-        $dataApi['data'] 	= array("waktu" => "$waktu",
+        $data['data'] 	= array("waktu" => "$waktu",
 								"username" => "$username",
 								"nama" => "$nama",
 								"instansi" => "$instansi",
@@ -40,48 +40,7 @@ class modelPengguna extends mysql_db {
 								"level" => "$level",
 								"confirm" => "$confirm",
 								"id_key" => "$id_key");
-		$PENGGUNA->KirimDataApi($dataApi);  
-    }	
-	
-    public function updatePenggunaApi($data) {		
-		$data['method'] = "update";
-		$username 		= $data['username'];
-        $nama 			= $data['nama'];
-        $instansi		= $data['instansi'];
-        $no_ktp 		= $data['no_ktp'];
-        $image 			= $data['image'];
-        $hp 			= $data['hp'];
-        $email 			= $data['email'];
-        $password 		= $data['password'];
-        $level 			= $data['level'];
-        $confirm		= $data['confirm'];                    
-        $waktu			= $data['waktu']; 		
-        $dataApi['data'] 	= array("username" => "$username",
-								"nama" => "$nama",
-								"instansi" => "$instansi",
-								"foto_ktp" => "$image",
-								"hp" => "$hp",
-								"email" => "$email",
-								"password" => "$password",
-								"level" => "$level",
-								"confirm" => "$confirm");
-		$PENGGUNA->KirimDataApi($dataApi);  
-    }		
-	
-    public function deletePenggunaApi($username) {
-		$data['method']	= "delete";
-		$data['data'] 	= array("username" => "$username");
-		$PENGGUNA->KirimDataApi($dataApi);  
-    }	
-
-    public function confirmApi($username) {		
-		$data['method'] = "update";
-        $dataApi['data']= array("username" => "$username",
-								"confirm" => "yes");
-		$PENGGUNA->KirimDataApi($dataApi);  
-    }		
-	
-	public function KirimDataApi($dataArr){
+		$dataArr	= $data;
 		$arr 		= array();
 		$action		= $dataArr['method'];
 		$temp 		= array();		
@@ -99,9 +58,104 @@ class modelPengguna extends mysql_db {
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		$response = curl_exec($ch);
 		curl_close($ch);
-		return $response;	
-	}
+		return $response;									
+    }	
+	
+    public function updatePenggunaApi($data) {		
+		$data['method'] = "update";
+		$username 		= $data['username'];
+        $nama 			= $data['nama'];
+        $instansi		= $data['instansi'];
+        $no_ktp 		= $data['no_ktp'];
+        $image 			= $data['image'];
+        $hp 			= $data['hp'];
+        $email 			= $data['email'];
+        $password 		= $data['password'];
+        $level 			= $data['level'];
+        $confirm		= $data['confirm'];                    
+        $waktu			= $data['waktu']; 		
+        $data['data'] 	= array("username" => "$username",
+								"nama" => "$nama",
+								"instansi" => "$instansi",
+								"foto_ktp" => "$image",
+								"hp" => "$hp",
+								"email" => "$email",
+								"password" => "$password",
+								"level" => "$level",
+								"confirm" => "$confirm");
 
+		$dataArr	= $data;
+		$arr 		= array();
+		$action		= $dataArr['method'];
+		$temp 		= array();		
+		foreach ($dataArr['data'] as $key => $val){			
+			$temp[$key] = $val;
+		}		
+		array_push($arr, $temp);	
+		$kirim 		= array('sync' => 'sync', 'action' =>$action, 'data' => $dataArr["data"]);	
+		$datagw 	= urlencode(json_encode($kirim));
+		$url 		= $alamat_ip;
+		$ch 		= curl_init($url); 
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:application/x-www-form-urlencoded;charset=utf-8"));
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $datagw);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($ch);
+		curl_close($ch);
+		return $response;																	
+    }		
+	
+    public function deletePenggunaApi($username) {
+		$data['method']	= "delete";
+		$data['data'] 	= array("username" => "$username");
+
+		$dataArr	= $data;
+		$arr 		= array();
+		$action		= $dataArr['method'];
+		$temp 		= array();		
+		foreach ($dataArr['data'] as $key => $val){			
+			$temp[$key] = $val;
+		}		
+		array_push($arr, $temp);	
+		$kirim 		= array('sync' => 'sync', 'action' =>$action, 'data' => $dataArr["data"]);	
+		$datagw 	= urlencode(json_encode($kirim));
+		$url 		= $alamat_ip;
+		$ch 		= curl_init($url); 
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:application/x-www-form-urlencoded;charset=utf-8"));
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $datagw);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($ch);
+		curl_close($ch);
+		return $response;											
+
+    }	
+
+    public function confirmApi($username){
+		$data['method'] = "update";
+        $data['data']= array("username" => "$username",
+							  "confirm" => "yes");
+		$dataArr	= $data;
+		$arr 		= array();
+		$action		= $dataArr['method'];
+		$temp 		= array();		
+		foreach ($dataArr['data'] as $key => $val){			
+			$temp[$key] = $val;
+		}		
+		array_push($arr, $temp);	
+		$kirim 		= array('sync' => 'sync', 'action' =>$action, 'data' => $dataArr["data"]);	
+		$datagw 	= urlencode(json_encode($kirim));
+		$url 		= $alamat_ip;
+		$ch 		= curl_init($url); 
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:application/x-www-form-urlencoded;charset=utf-8"));
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $datagw);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($ch);
+		curl_close($ch);
+		return $response;									
+    }
+	
     public function insertPengguna($data) {
 		$username 	= $data['username'];
         $nama 		= $data['nama'];
@@ -163,6 +217,13 @@ class modelPengguna extends mysql_db {
           $result = $this->query($query);
           return $result;
      }
+	 
+    public function confirmPengguna($username) {
+        $query = "update user set confirm = 'yes' where username = '$username'";
+         //Execute query
+          $result = $this->query($query);
+          return $result;
+     }	 
 
     public function deletePengguna($username) {
         $query = "delete from user where username='$username'";

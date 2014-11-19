@@ -22,7 +22,6 @@ $DB=new mysql_db();
 $UTILITY=new utilityCode();
 
 $PENGGUNA=new modelPengguna();
-
 $id = $_POST['Login'];
 //echo "ID=$id";
 if ( isSet($id)) {
@@ -49,12 +48,12 @@ if ( isSet($id)) {
                $confirm = $hasil->confirm;
           }
           if (($user_name1 == $nam) && ($user_pass1 != $pass)) {
-               $UTILITY->popup_message("Maaf password atau username tidak ada!");
+               $UTILITY->popup_message("Maaf username tidak ada!");
                session_destroy();
                $UTILITY->location_goto(".");
           }
           if ($user_name1 != $nam && $user_pass1 == $pass) {
-               $UTILITY->popup_message("Maaf password atau username tidak ada!");
+               $UTILITY->popup_message("Maaf password tidak tepat!");
                session_destroy();
                $UTILITY->location_goto(".");
           }
@@ -63,8 +62,8 @@ if ( isSet($id)) {
                session_destroy();
                $UTILITY->location_goto(".");
           }
-          if ($user_name1 != $nam && $user_pass1 != $pass && $confirm!='yes') {
-               $UTILITY->popup_message("Account Username belum dikonfirmasi!");
+          if ($user_name1 == $nam && $user_pass1 == $pass && $confirm!='yes') {
+               $UTILITY->popup_message("Username Anda belum dikonfirmasi!");
                session_destroy();
                $UTILITY->location_goto(".");
           }		  
@@ -97,12 +96,7 @@ if ( isSet($id)) {
 else {
      //bila sudah teridentifikasi
      $username = $_SESSION['username'];
-     if ($username != "")
-          $UTILITY->location_goto("content/home");
-     else
-     //bila belum login
-     echo "Belum masuk";
-       //   $UTILITY->location_goto(".");
+     if ($username != "") $UTILITY->location_goto("content/home");
 }
 ?>
 

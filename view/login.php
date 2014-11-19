@@ -36,13 +36,16 @@
 		</nav>
 		<div class="clear"> </div>
 	<div class="container">
-
       <form action="<?=$url_rewrite?>login" method="post" onsubmit="return validasi_login(this) " class="form-signin" role="form">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <h2 class="form-signin-heading">SILAHKAN LOGIN</h2>
+		<div class="username">
+			<label for="inputEmail" class="sr-only">Username</label>
+			<input type="text" name="username" id="inputEmail" class="form-control" placeholder="username" required autofocus>
+		</div>
+		<div class="checkbox">
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+		</div>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me

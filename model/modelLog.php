@@ -42,14 +42,16 @@ class modelLog extends mysql_db {
     }	
     public function insertLogVideo($data) {
         $user_id	 		= $data['user_id'];
-        $ip				 	= $data['ip'];
+        $ip				 	= $_SERVER['REMOTE_ADDR'];
         $nama_file		 	= $data['nama_file'];
-        $waktu		 		= $data['waktu'];	
+        $judul			 	= $data['judul'];
+        $waktu		 		= date('Y-m-d h:i:s');	
 		$keterangan			= 'lihat';
         $query = "Insert into log_video
                         set user_id		= '$user_id',
                         ip				= '$ip',
-                        nama			= '$nama',
+                        nama_file		= '$nama_file',
+                        judul			= '$judul',
                         waktu			= '$waktu',
                         keterangan		= '$keterangan'";
         //Execute query

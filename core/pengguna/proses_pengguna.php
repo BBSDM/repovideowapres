@@ -35,13 +35,16 @@ if($_POST['ganti1']){
 								"id_key" => $id_key,
 								"waktu" => $waktu,
 								"user_id" => $user_id);								
-          $PENGGUNA->updatePengguna($data_pengguna);        
-          // $PENGGUNA->updatePenggunaApi($data_pengguna);        
-          $UTILITY->location_goto("content/setting/edit/$user_id");
-          exit;
+	if ($STATUS_API==0){
+		$PENGGUNA->updatePengguna($data_pengguna);        
+	}else{
+		$PENGGUNA->updatePenggunaApi($data_pengguna);        
+	}
+	$UTILITY->location_goto("content/setting/edit/$user_id");exit;
 }
-$image_file=$_FILES["image"]['name'];
-$filesave="";
+
+$image_file	= $_FILES["image"]['name'];
+$filesave	= "";
 if($image_file!=""){
     $filesave="user"."_$tanggal"."_$image_file";
     $UTILITY->upload_gambar("image",$path_upload_ktp, 1,$filesave);
@@ -64,28 +67,43 @@ $data_pengguna 		= array("username" => $username,
 							"user_id" => $user_id);
 
 if ($kondisi == "tambah") {
-    $PENGGUNA->insertPengguna($data_pengguna);
-    // $PENGGUNA->insertPenggunaApi($data_pengguna);
+	if ($STATUS_API==0){
+	    $PENGGUNA->insertPengguna($data_pengguna);
+	}else{
+		$PENGGUNA->insertPenggunaApi($data_pengguna);
+	}
     $UTILITY->location_goto("content/setting");
 }else if ($kondisi == "edit") {
-    $PENGGUNA->updatePengguna($data_pengguna);
-    // $PENGGUNA->updatePenggunaApi($data_pengguna);
+	if ($STATUS_API==0){
+		$PENGGUNA->updatePengguna($data_pengguna);
+	}else{
+		$PENGGUNA->updatePenggunaApi($data_pengguna);
+	}    
 	if ($_SESSION['level']==1){
 		$UTILITY->location_goto("content/setting");
 	}else{
 		$UTILITY->location_goto("content/home");
 	}
 }else if ($hapuspengguna != "") {   
-    $PENGGUNA->deletePengguna($hapuspengguna);
-    // $PENGGUNA->deletePenggunaApi($hapuspengguna);
+	if ($STATUS_API==0){
+		$PENGGUNA->deletePengguna($hapuspengguna);	
+	}else{
+		$PENGGUNA->deletePenggunaApi($hapuspengguna);
+	}
     $UTILITY->location_goto("content/setting");
 }else if ($publishdata!= "") {
 	if($publishvalue == "no"){							
-		$PENGGUNA->publishData($publishdata,'user','yes');
-		// $PENGGUNA->publishDataApi($publishdata,'user','yes');
+		if ($STATUS_API==0){
+			$PENGGUNA->publishData($publishdata,'user','yes');
+		}else{
+			$PENGGUNA->publishDataApi($publishdata,'user','yes');
+		}		
 	}else{
-        $PENGGUNA->publishData($publishdata,'user','no');
-        // $PENGGUNA->publishDataApi($publishdata,'user','no');
+		if ($STATUS_API==0){
+			$PENGGUNA->publishData($publishdata,'user','no');
+		}else{
+			$PENGGUNA->publishDataApi($publishdata,'user','no');
+		}	        
 	}
 	$UTILITY->location_goto("content/setting");
 }

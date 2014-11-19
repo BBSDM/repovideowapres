@@ -206,17 +206,27 @@ font-family: "Ropa Sans",sans-serif;
 }
 .popular{
 	background:#653318;
-	padding:15.5px;
 	padding: 12.4px;
 }
 .popular p img{
 	vertical-align: text-bottom;
 }
-.grid1{
+.grid1{	
 	border: 1px solid rgb(230, 230, 230);
 	border-top:none;
-	padding:10px;
+	padding:20px;
 }
+.grid1 .tag a{
+	background:#653318;
+	color: rgb(250, 250, 250);
+	font-size:0.9em;
+	text-decoration:none;
+	text-align:center;
+	margin-left:5px;
+	padding:5px 5px 5px 5px;
+}
+
+
 /*----video1----*/
 .video1 img{
 	float:left;
@@ -278,7 +288,7 @@ font-family: "Ropa Sans",sans-serif;
 .time{
 	position: absolute;
 	bottom: 50px;
-	right: 7px;
+	right: 15px;
 	color: #fff;
 	background: rgba(85, 85, 85, 0.61);
 	padding: 5px 10px;
@@ -549,6 +559,9 @@ font-family: "Ropa Sans",sans-serif;
 	margin: 5px 0px;
 	opacity: 0.8;
 }
+#page-selection{
+	margin-left:30px;
+}
 .footer1 {
 	padding: 10px;
 	background: #2a2a2a; /* Old browsers */
@@ -766,7 +779,7 @@ ul.dc_paginationA03 li a:hover, ul.dc_paginationA03 li a.current {
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
-	margin-top: 200px;
+	margin-top: 10px;
 	
 	
 }

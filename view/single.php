@@ -59,18 +59,12 @@
 				
 					</div>
 				</div>
-			</div>
-			
-			
-				
-				
-			
+			</div>			
 			
 			<div class="col-md-3">	
 			<div class="right-content">
 				<div class="popular">
 					<h3>Video Paling Populer</h3>
-					<p><img src="<?=$url_rewrite?>images/l1.png" title="likes" /> 10,000</p>
 					<div class="clear"> </div>
 				</div>
 						<div class="grid1">

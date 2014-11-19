@@ -181,7 +181,7 @@ while ($aRow = mysql_fetch_array($rResult)) {
         $row[] 			= $nama_client;
         $row[]  		= $uuid;
         $row[]  		= $text_confirm;
-		$delete			= "<a href=\"#\" class=\"btn btn-danger\" onClick=\"confirm_delete('$url_rewrite"."proses/application/happlication/$id_aplikasi') \"title=\"Hapus\">Hapus</a>";
+		$delete			= "<a href=\"#\" class=\"btn btn-danger\" onclick=\"confirm_delete('$url_rewrite"."proses/application/happlication/$id_aplikasi') \"title=\"Hapus\">Hapus</a>";
         $edit			= "<a href=\"$url_rewrite"."content/application/edit/$id_aplikasi \" class=\"btn btn-success\" title=\"Edit\">Edit</a>";		      
 		$publish		= "<a href=\"$url_rewrite"."proses/application/publish/$id_aplikasi/$status\" class=\"btn btn-info\" title=\"Publish\">Aktif</a>";			
 		$row[] 			= $edit."  ".$delete."  ".$publish;

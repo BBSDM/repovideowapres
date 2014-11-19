@@ -60,7 +60,8 @@ class mysql_db extends config {
 
                if ($param == true) {
                     while ($data = $this->fetch_array($this->result)) {
-                         $dataArray[] = $data;
+                         
+						 $dataArray[] = $data;
                     }
                } else {
                     $data = $this->fetch_array($this->result);

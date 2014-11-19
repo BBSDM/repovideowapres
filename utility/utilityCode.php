@@ -144,6 +144,41 @@ class utilityCode extends config {
           } else
                return "";
      }
+/*
+	 public function tanggal_video($nama_file){
+		$tgl 	= substr($nama_file,0,10);
+        if ($tgl != "0000-00-00" && $tgl != "") {
+            $temp = explode(" ", $tgl);
+            $temp = explode("-", $temp[0]);
+            $tahun = $temp[0];
+            $bln = $temp[1];
+            $hari = $temp[2];
+            switch ($bln) {
+				case "01" : $namaBln = "Jan"; break;
+				case "02" : $namaBln = "Feb";break;
+				case "03" : $namaBln = "Mar";break;
+				case "04" : $namaBln = "Apr";break;
+				case "05" : $namaBln = "May";break;
+				case "06" : $namaBln = "Jun";break;
+				case "07" : $namaBln = "Jul";break;
+				case "08" : $namaBln = "Aug";break;
+				case "09" : $namaBln = "Sep";break;
+                case "10" : $namaBln = "Oct";break;
+				case "11" : $namaBln = "Nov";break;
+                case "12" : $namaBln = "Dec";break;
+            }
+            $tgl_full = "$hari $namaBln $tahun";
+            return $tgl_full;
+        } else
+            return "";
+	 }
+*/	 
+	 public function uploaded_by($nama_file){
+		$array_uploaded_by	= split('_',$nama_file);
+		$uploaded_by		= $array_uploaded_by[0];
+		return $uploaded_by;
+	 
+	 }
 
      public function format_tanggal_time($tgl) {
           if ($tgl != "0000-00-00 00:00:00" && $tgl != "") {
@@ -228,7 +263,16 @@ class utilityCode extends config {
           } else
                return "";
      }
-
+	 //deteksi keberadaan file
+	 public function cek_file($path,$file) {
+        if (!file_exists($path."/".$file)) {
+            $ketemu	= 0;
+        } else{
+			$ketemu = 1;
+		}
+		return $ketemu;
+	 }
+	 
      //deleter direktori
      public function upload_gambar($file, $folder, $type,$filesave) {
 

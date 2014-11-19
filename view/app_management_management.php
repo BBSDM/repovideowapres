@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+	<html>
+		<head>
+			<?php 
+			   $librari_data_tables="aktif";
+			   include"view/head.php";
 
-<head>
-
-     <?php
-   include "view/head.php";
-   ?>
-<?php
-             
                $qWhere = array("id_aplikasi" => $id_aplikasi);
                $data = $APPLICATION->readApplication($qWhere);
                //Hitung jmlh data
@@ -74,52 +71,70 @@
 						}
 					});	
 				}				
-			</script>
-            <style type="text/css">
-				#penggunaForm label.error {
-					margin-left: 10px;
-					width: auto;
-					display: inline;
-					color: red;
-				}
-			</style>
-</head>
+				</script>
+				<style type="text/css">
+					#penggunaForm label.error {
+						margin-left: 10px;
+						width: auto;
+						display: inline;
+						color: red;
+					}
+				</style>			
+		</head>
+		<body>
+		
+		<!----start-wrap---->
+		<div class="wrap">
+		<nav class="navbar navbar-default" role="navigation">
+			<!----start-Header---->
+			<div class="header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" 
+			aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<!----start-Logo---->
+			<div class="logo">
+					<?php include "view/logo.php";?>
+			</div>
+				<!----End-Logo---->
+				<!----start-top-nav---->
+				
+				<div id ="navbar" class="collapse navbar-collapse">
+					<?php include "view/menu.php";?>
+				</div>
+			
+				<div class="clear"> </div>
+				<!----End-top-nav---->
+			</div>
+			<!----End-Header---->
+		</nav>	
 
-<body>
-
-    <div id="wrapper">
-
- <?php
-        include "view/default/right_menu.php";
-        ?>
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Application Management</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
+		<div id="content">
+			<div class="section group">							
+				<div class="col span_1_of_all">
+					<h3>Management Aplikasi</h3>
                     <div class="panel panel-default">
                         <div class="panel-info">
                              <ul class="breadcrumb">
-                                  <li ><a href="<?=$url_rewrite?>content/application">Application Management</a></li>
-                                  <li class="active" ><?=$title_tab?></li>
+                                  <li class="active" ><a href="<?=$url_rewrite ?>content/application" >Daftar Aplikasi</a></li>
+                                  <li><?=$title_tab;?></a></li>
                              </ul>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-12">
+                        </div>						
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">                              
+						<div class="row">
+                                <div class="col span_1_of_all">
                                       <form enctype="multipart/form-data" id="penggunaForm"name="berita" method="post" action="<?php echo "$url_rewrite"."proses/application";?>">
                                        <div class="form-group">
                                             <label>Alamat IP</label>
                                              <?php
                                                                            if ($ip != "")
-                                                                                echo("<input class=\"form-control\" id=\"ip\" onkeyup=\"proses_uuid()\" name=\"ip\" type=\"text\" placeholder=\"Enter ip\" value=\"$ip\" />");
+                                                                                echo("<input class=\"form-control\" id=\"ip\" onkeyup=\"proses_uuid()\" name=\"ip\" type=\"text\" placeholder=\"Enter ip\" required value=\"$ip\" />");
                                                                            else
-                                                                                echo("<input class=\"form-control\"  id=\"ip\" onkeyup=\"proses_uuid()\" name=\"ip\" type=\"text\" placeholder=\"Enter ip\" value=\"\" />");
+                                                                                echo("<input class=\"form-control\"  id=\"ip\" onkeyup=\"proses_uuid()\" name=\"ip\" type=\"text\" placeholder=\"Enter ip\" value=\"\" required />");
                                                                            ?>
                                         </div>
 										
@@ -127,9 +142,9 @@
                                             <label>Nama Client</label>
                                              <?php
                                                                            if ($nama_client != "")
-                                                                                echo("<input class=\"form-control\" id=\"nama_client\" name=\"nama_client\" type=\"text\" placeholder=\"Enter client name\" value=\"$nama_client\" />");
+                                                                                echo("<input class=\"form-control\" id=\"nama_client\" name=\"nama_client\" type=\"text\" placeholder=\"Enter client name\" value=\"$nama_client\" required />");
                                                                            else
-                                                                                echo("<input class=\"form-control\"  id=\"nama_client\" name=\"nama_client\" type=\"text\" placeholder=\"Enter client name\" value=\"\" />");
+                                                                                echo("<input class=\"form-control\"  id=\"nama_client\" name=\"nama_client\" type=\"text\" placeholder=\"Enter client name\" value=\"\" required />");
                                                                            ?>
                                         </div>
 
@@ -152,32 +167,21 @@
 										?>
                                         <button type="submit" class="btn btn-success">Submit</button>
                                         <button type="button" class="btn btn-info" onClick=javascript:window.location.href="<?=$url_rewrite;?>content/application" >Back</button>                 
-                                  
-                                
                                       </form>
-                                     
-                                     
-                                  
-                                </div>
-                                
+                                </div>                                
                                 <!-- /.col-lg-12 (nested) -->
-                            </div>
-                            <!-- /.row (nested) -->
+                            </div>                            
+
                         </div>
                         <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-
-</body>
-
-</html>
+					</div>
+				</div>
+              </div>
+			</div>
+			<div class="clear"> </div>
+			<div class="copy-right">
+				<?php include "view/footer.php";?>			
+			</div>		
+		</div> <!-- end wrap --> 	
+	</body>
+</html>	

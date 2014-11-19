@@ -10,8 +10,11 @@
 #Gunadarma University
 $status_index=$_GET['status'];
 include 'config/application.php';
-$UTILITY->show_data($_SESSION['user_name']);
-  if ($_SESSION['user_name']!=""){
+  if ($_SESSION['user_name']!="" AND $_SESSION['user_id']!="" AND $_SESSION['level']!="" ){
         $UTILITY->location_goto("content/home");
-  }else include "view/index.php";
+  }else {
+	$_SESSION['user_name']="visitor";
+	$UTILITY->location_goto("content/home");
+  
+  }
 ?>

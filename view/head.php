@@ -1,7 +1,4 @@
 <title><?=$TITLE?></title>
-
-
-			
 			<link rel="shortcut icon" type="image/x-icon" href="<?=$url_rewrite?>images/logo_situs.ico" />
 			<link rel="stylesheet" type="text/css" href="<?=$url_rewrite?>css/ddcolortabs.css" />
 			<link href="<?=$url_rewrite?>css/style_slider.css" rel="stylesheet"/>
@@ -13,15 +10,19 @@
 			<script type="text/javascript" src="<?=$url_rewrite?>js/jssor.js"></script>
 			<script type="text/javascript" src="<?=$url_rewrite?>js/jssor.slider.js"></script>
 			<script type="text/javascript" src="<?=$url_rewrite?>bootstrap/js/bootstrap.min.js"></script>
-	
+			<script type="text/javascript" src="<?=$url_rewrite?>js/jquery.validate.js"></script>      
+			<script type="text/javascript" src="<?=$url_rewrite?>js/jquery-ui.js"></script> 
+			<!-- SB Paging-->
+			<script src="<?=$url_rewrite?>js/jquery.bootpag.min.js"></script>
 			
 <?php if ($librari_data_tables=="aktif"){?>
-	<!-- Data tables -->
-	<link rel="stylesheet" href="<?=$url_rewrite?>css_tabel/demo_page.css" />
-	<link rel="stylesheet" href="<?=$url_rewrite?>css_tabel/demo_table.css" />
-	<script type="text/javascript" language="javascript" src="<?=$url_rewrite?>jquery_tabel/jquery.js"></script>
-	<script type="text/javascript" language="javascript" src="<?=$url_rewrite?>jquery_tabel/jquery.dataTables.js"></script>
-	<!--<script type="text/javascript" language="javascript" src="<?=$url_rewrite?>jquery_tabel/lib.tables.js"></script>	-->
+			<!-- Data tables -->
+			<link rel="stylesheet" href="<?=$url_rewrite?>css_tabel/demo_page.css" />
+			<link rel="stylesheet" href="<?=$url_rewrite?>css_tabel/demo_table.css" />
+
+			
+			<script src="<?=$url_rewrite?>js/jquery.dataTables.js"></script>
+			<script src="<?=$url_rewrite?>js/plugins/dataTables/dataTables.bootstrap.js"></script>
 <?php } ?>
 
 <?php	
@@ -33,8 +34,17 @@ $filename=$data[1];
 if($filename=="home" || $filename==""){
 
 ?>
-<script>
-
+<script language="javaScript">
+		var form_id;
+		function confirm_delete(go_url)
+		{
+			var answer = confirm("Anda yakin menghapus data ini?");
+			if (answer)
+			{
+					  
+				   location=go_url;
+			}
+		}
         jQuery(document).ready(function ($) {
             var options = {
                 $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
@@ -104,3 +114,15 @@ if($filename=="home" || $filename==""){
 	
 	<?php
 	}?>
+<script language="javaScript">
+		var form_id;
+		function confirm_delete(go_url)
+		{
+			var answer = confirm("Anda yakin menghapus data ini?");
+			if (answer)
+			{
+					  
+				   location=go_url;
+			}
+		}
+</script>		

@@ -8,8 +8,10 @@ require_once __DIR__ .'/../utility/utilityCode.php';
 
 //Untuk Model 
 require_once __DIR__ . '/../model/modelPengguna.php';
+require_once __DIR__ . '/../model/modelVideo.php';
 require_once __DIR__ . '/../model/modelLog.php';
 require_once __DIR__ . '/../model/modelApplication.php';
+require_once __DIR__ . '/../model/modelTag.php';
 //Akhir Model
 
 require_once __DIR__ ."/../library/security/HTMLPurifier.auto.php";
@@ -24,7 +26,9 @@ $UTILITY=new utilityCode();
 
 $LOG		=new modelLog();
 $PENGGUNA	=new modelPengguna();
+$VIDEO		=new modelVideo();
 $APPLICATION=new modelApplication();
+$TAGS		=new modelTag();
 
  $cek=$_SERVER['SCRIPT_NAME'];
 $temp=explode("/", $cek);
@@ -35,7 +39,7 @@ if($status_index!="1"){
           if( isSet($_COOKIE[$cookie_name])){ 
              include 'autologin.php';
           }else{
-               if($file!="index.php" && $file!="tanpa_login.php"){
+               if($file!="index.php" AND $file!="daftar.php"){
                     $UTILITY->popup_message("You must login to enter into system");
                      session_destroy();
                      $UTILITY->location_goto("index.php");

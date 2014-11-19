@@ -11,7 +11,7 @@
 
 require_once './config/application.php';
 $path = ltrim($_SERVER['REQUEST_URI'], '/');    // Trim leading slash(es)
-$path_compare = "repo_mvc/proses";
+$path_compare = "repovideowapres/proses";
 $temp_path = explode($path_compare, $path);
 
 
@@ -39,6 +39,9 @@ else
           break;
 		  
           case 'confirm':
+			   if ($data[2] !="") {
+                    $id_key 	= $purifier->purify($data[2]);
+               }
                include "./core/confirm.php";
           break;
 		  
@@ -48,6 +51,28 @@ else
 
 		  case 'check_email':
                include "./core/check_email.php";
+          break;		  
+
+		  case "paging_video":
+			    $page 		= $purifier->purify($data[2]);
+			    $init 		= $purifier->purify($data[3]);
+			    $tanggal	= $purifier->purify($data[4]);
+				include "./ajax/paging_video.php";
+          break;
+		  
+		  case "paging_video_populer":
+			    $page 		= $purifier->purify($data[2]);
+			    $init 		= $purifier->purify($data[3]);
+			    $tanggal	= $purifier->purify($data[4]);
+				include "./ajax/paging_video_populer.php";
+          break;		  
+
+		  case "paging_tag":
+			    $page 		= $purifier->purify($data[2]);
+			    $init 		= $purifier->purify($data[3]);
+			    $tag		= $purifier->purify($data[4]);
+			    $tanggal	= $purifier->purify($data[5]);
+				include "./ajax/paging_tag.php";
           break;		  
 
 	      // untuk management video

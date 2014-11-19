@@ -18,22 +18,47 @@ $elements = explode('/', $temp_path[1]);                // Split path on slashes
 $data = array_filter($elements);
 
 if (count($data) == 0)                       // No path elements means home
-     include "./home.php";
+     include "./index.php";
 else
 //untuk main menu
      switch ($data[1]) {             // Pop off first item and switch
-          case 'home':
-		 
-               include "view/home.php";
+	 // START MENU SEBELUM LOGIN
+          case 'home':		 
+               include "view/index.php";
 			   exit;
           break;
+          case "daftar":
+		       include "view/daftar.php";
+			  
+          break;
 			   
-          case "daftarlogfoto":
-                include "view/daftarlogfoto.php";
+          case "login":
+                include "view/login.php";
           break;
-		    case "daftarloglogin":
-                include "view/daftarloglogin.php";
+		  
+		   case "single":
+				include "view/single.php";
+		  break;     
+		  
+		  case "contact":
+				include "view/contact.php";
+		  break;     			  
+	// SELESAI MENU SEBELUM LOGIN
+		  
+          case "log":			
+				$title="Daftar Log Video";
+                include "view/log_video.php";
           break;
+		  
+          case "log_video":			
+				$title="Daftar Log Video";
+                include "view/log_video.php";
+          break;		 
+
+          case "log_login":			
+				$title="Daftar Log Login";
+                include "view/log_login.php";
+          break;		 		  
 		  
           case "daftar_aplikasi":
                 include "view/daftar_aplikasi.php";
@@ -53,7 +78,7 @@ else
 
           case "application":
                if ($data[2] == "tambah") {
-                    $title_tab = "Add Application";
+                    $title_tab = "Tambah Aplikasi";
                     include "./view/app_management_management.php";
                } else if ($data[2] == "edit") {
                     $id_aplikasi = $purifier->purify($data[3]);
@@ -62,7 +87,7 @@ else
                          $UTILITY->popup_message("Sory your data not found");
                          $UTILITY->location_goto("content/application");
                     } else {
-                         $title_tab = "Edit Application";
+                         $title_tab = "Edit Aplikasi";
                          include "./view/app_management_management.php";
                     }
                } else
@@ -70,22 +95,37 @@ else
            break;
 
           case "video":
-				if ($data[2] == "lihat") {
+				if ($data[2] == "view_video") {
                     $id_video = $purifier->purify($data[3]);
                     if ($id_video == "") {
                          $UTILITY->popup_message("Sory your data not found");
-                         $UTILITY->location_goto("content/video");
+                         $UTILITY->location_goto("content/home");
                     } else {
-                         $title_tab = "Lihat Video";
-                         include "./view/video_view.php";
+                         include "./view/view_video.php";
                     }
-               } else
-                    include "./view/video.php";
+               }
+			   else if ($data[2] == "view_tag") {
+                    $id_tag = $purifier->purify($data[3]);
+                    if ($id_tag == "") {
+                         $UTILITY->popup_message("Sory your data not found");
+                         $UTILITY->location_goto("content/home");
+                    } else {
+                         $title_tab = "Lihat Video Berdasarkan Tag";
+                         include "./view/view_tag.php";
+                    }
+               }
+			   else if ($data[2] == "view_populer") {
+                    include "./view/view_populer.php";
+               }
+			   else{
+					$tanggal	= $purifier->purify($data[2]);
+					include "./view/video.php";					
+			   }                    
            break;		   
 		   
           case "setting":
                if ($data[2] == "tambah") {
-                    $title_tab = "Add User";
+                    $title_tab = "Tambah Pengguna";
                     include "./view/setting_pengguna.php";
                } else if ($data[2] == "edit") {
                     $user_id = $purifier->purify($data[3]);
@@ -94,7 +134,7 @@ else
                          $UTILITY->popup_message("Sory your data not found");
                          $UTILITY->location_goto("content/setting");
                     } else {
-                         $title_tab = "Edit User";
+                         $title_tab = "Edit Pengguna";
                          include "./view/setting_pengguna.php";
                     }
                } else

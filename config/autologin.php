@@ -33,7 +33,6 @@ $PENGGUNA = new modelPengguna();
            
           $hasil = $PENGGUNA->readPengguna($data);
           $panjang = count($hasil);
-            $UTILITY->show_data($hasil);
           if ($panjang < 1) {
                session_destroy();
                $UTILITY->location_goto("index.php");
